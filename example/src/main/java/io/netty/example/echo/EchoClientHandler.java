@@ -35,7 +35,8 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
     public EchoClientHandler() {
         firstMessage = Unpooled.buffer(EchoClient.SIZE);
         for (int i = 0; i < firstMessage.capacity(); i ++) {
-            firstMessage.writeByte((byte) i);
+            String test = "demo" + i;
+            firstMessage.writeBytes(test.getBytes());
         }
     }
 
